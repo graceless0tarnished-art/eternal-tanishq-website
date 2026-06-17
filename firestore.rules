@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global Safety Net: default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Inquiries: public creation only with strict schema validation
+    match /inquiries/{inquiryId} {
+      allow create: if isValidId(inquiryId) && isValidInquiry(request.resource.data);
+      allow read, update, delete: if false;
+    }
+
+    // Reusable Validation Helper Utilities
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isValidInquiry(data) {
+      return data.keys().hasAll(['id', 'name', 'email', 'style', 'timeline', 'message', 'submittedAt'])
+          && data.keys().size() == 7
+          && data.id is string && data.id.size() <= 100
+          && data.name is string && data.name.size() > 0 && data.name.size() <= 100
+          && data.email is string && data.email.size() > 0 && data.email.size() <= 100 && data.email.matches('.+@.+')
+          && data.style is string && (data.style == 'minimal' || data.style == 'brutalist' || data.style == 'interactive' || data.style == 'fluid')
+          && data.timeline is string && (data.timeline == 'express' || data.timeline == 'standard')
+          && data.message is string && data.message.size() <= 5000
+          && data.submittedAt is string;
+    }
+  }
+}

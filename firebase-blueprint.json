@@ -1,0 +1,50 @@
+{
+  "entities": {
+    "inquiry": {
+      "title": "Inquiry",
+      "description": "User custom digital masterpiece design blueprints and inquiry details.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique inquiry ID"
+        },
+        "name": {
+          "type": "string",
+          "description": "Client name"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Client contact email"
+        },
+        "style": {
+          "type": "string",
+          "enum": ["minimal", "brutalist", "interactive", "fluid"],
+          "description": "User preferred design style"
+        },
+        "timeline": {
+          "type": "string",
+          "enum": ["express", "standard"],
+          "description": "Proposed design sprint timeline"
+        },
+        "message": {
+          "type": "string",
+          "description": "Custom brief message"
+        },
+        "submittedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of inquiry dispatch representable in ISO string or server timestamp"
+        }
+      },
+      "required": ["id", "name", "email", "style", "timeline", "message", "submittedAt"]
+    }
+  },
+  "firestore": {
+    "/inquiries/{inquiryId}": {
+      "schema": "inquiry",
+      "description": "Submit client-specific inquiry blueprints directly to Firebase."
+    }
+  }
+}

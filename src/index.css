@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@import "./styles/fonts.css";
+@import "./styles/theme.css";
+
+@theme {
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --color-background: #ffffff;
+  --color-brand-gold: #D4C4AE;
+  --color-brand-gold-dark: #B59E81;
+  --color-brand-emerald: #0D513F;
+  --color-brand-emerald-dark: #083E30;
+}
+

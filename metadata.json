@@ -1,0 +1,6 @@
+{
+  "name": "Eternal Tanishq Portfolio",
+  "description": "An immersive, cinematic design studio and visual architecture portfolio featuring dynamic day/night circadian ambient shifts, smooth custom interactive configurators, and micro-animations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

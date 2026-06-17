@@ -1,0 +1,38 @@
+[
+  {
+    "id": "inq_1781630720492_ebk5u8",
+    "name": "Test",
+    "email": "test@example.com",
+    "style": "minimal",
+    "timeline": "express",
+    "message": "",
+    "submittedAt": "2026-06-16T17:25:20.492Z"
+  },
+  {
+    "id": "inq_1781698637198_cwbx69",
+    "name": "Visual Architect",
+    "email": "architect@example.com",
+    "style": "minimal",
+    "timeline": "express",
+    "message": "Test message.",
+    "submittedAt": "2026-06-17T12:17:17.198Z"
+  },
+  {
+    "id": "inq_1781698784663_2mzs33",
+    "name": "Visual Architect 2",
+    "email": "architect2@example.com",
+    "style": "fluid",
+    "timeline": "standard",
+    "message": "Test message.",
+    "submittedAt": "2026-06-17T12:19:44.663Z"
+  },
+  {
+    "id": "inq_1781718475710_ps0g68",
+    "name": "System Core Verifier",
+    "email": "test@example.com",
+    "style": "classic",
+    "timeline": "standard",
+    "message": "Verifying system logic with actual nodemailer triggers.",
+    "submittedAt": "2026-06-17T17:47:55.710Z"
+  }
+]
